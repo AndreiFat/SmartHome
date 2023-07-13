@@ -1,0 +1,45 @@
+.highlight {
+    font-size: 54px;
+}
+
+.location-text-font-bold {
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 800;
+}
+
+.location-text-font-regular {
+    font-family: 'Dosis', sans-serif !important;
+    font-weight: 200 !important;
+}
+
+.w-33 {
+    width: 33% !important;
+}
+
+.w-10 {
+    width: 10% !important;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+.blue {
+    color: #5ec1ff;
+}
+
+.cool {
+    color: #008bfc;
+}
+
+.warm {
+    color: #ff4a29;
+}
+
+.violet {
+    color: #718dff;
+}
+
+.fs-7 {
+    font-size: 15px;
+}

@@ -1,5 +1,237 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    ceva din homepage
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col">
+                        <p class="fs-4 my-2"><i class="fa-brands fa-raspberry-pi me-2 fa-lg"></i> Sensor Statistics
+                        </p>
+                        <div class="card mb-3">
+                            <div class="row card-body p-4">
+                                <div class="col-md-4 mb-3">
+                                    <p class="fs-5 mb-0"><i
+                                            class="fa-solid fa-temperature-three-quarters fa-beat-fade fa-lg me-2"></i>Temperature
+                                    </p>
+                                    <p class="highlight  fw-semibold mb-0">32</p>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <p class="fs-5 mb-0"><i class="fa-solid fa-droplet fa-bounce fa-lg me-2"></i>Humidity
+                                    </p>
+                                    <p class="highlight fw-semibold mb-0">32</p></div>
+                                <div class="col-md-4 mb-3">
+                                    <p class="fs-5 mb-0"><i class="fa-solid fa-feather fa-lg fa-flip me-2"></i>Pressure
+                                    </p>
+                                    <p class="highlight  fw-semibold mb-0">32</p></div>
+                                <div class="col-md-4">
+                                    <p class="fs-5 mb-0"><i class="fa-solid fa-microchip fa-shake fa-lg me-2"></i>CPU
+                                        Load</p>
+                                    <p class="highlight  fw-semibold mb-0">32</p></div>
+                                <div class="col-md-4">
+                                    <p class="fs-5 mb-0"><i class="fa-solid fa-hourglass-start fa-fade fa-lg me-2"></i>CPU
+                                        Inactivity</p>
+                                    <p class="highlight  fw-semibold mb-0">32</p></div>
+                            </div>
+                            <div class="card-footer p-4">
+                                <form>
+                                    <div class="row d-flex">
+                                        <div class="col-md-5 ps-3">
+                                            <div class="">
+                                                <label for="exampleInputEmail1" class="form-label mb-0">Set
+                                                    Temperature</label>
+                                                <input type="email" class="form-control d-none" id="exampleInputEmail1"
+                                                       aria-describedby="emailHelp">
+                                                <p class="fs-2 fw-semibold mb-0" id="">32</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <label for="exampleInputEmail1" class="form-label mb-0">Set
+                                                    Humidity</label>
+                                                <input type="email" class="form-control d-none" id="exampleInputEmail1"
+                                                       aria-describedby="emailHelp">
+                                                <p class="fs-2 fw-semibold mb-0" id="">32</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 ps-0">
+                                            <button type="submit" class="btn btn-primary w-100 h-100 fs-5 fw-semibold">
+                                                <i
+                                                        class="fa-solid fa-sliders fa-lg me-3"></i>Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="fs-4 my-2"><i class="fa-solid fa-house-laptop me-3"></i>Devices</p>
+                        <div class="card p-3">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card bg-white">
+                                        <div class="card-body">
+                                            <i class="fa-solid fa-lightbulb fa-4x"></i>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                       id="flexSwitchCheckChecked" checked>
+                                                <label class="form-check-label" for="flexSwitchCheckChecked">Checked
+                                                    switch checkbox input</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-white">
+                                        <div class="card-body">
+                                            <i class="fa-solid fa-wifi fa-4x"></i>
+                                            <form action="">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch"
+                                                           id="flexSwitchCheckChecked" checked>
+                                                    <label class="form-check-label" for="flexSwitchCheckChecked">Checked
+                                                        switch checkbox input</label>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-white">
+                                        <div class="card-body">
+                                            <i class="fa-solid fa-building-lock fa-4x"></i>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                       id="flexSwitchCheckChecked" checked>
+                                                <label class="form-check-label" for="flexSwitchCheckChecked">Checked
+                                                    switch checkbox input</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <p class="fs-4 my-2"><i class="fa-solid fa-cloud-sun-rain me-3"></i>Weather</p>
+                <div class="card">
+                    <div class="card-body p-4">
+                        <div class="row mb-3">
+                            <div class="col-md-6 my-auto">
+                                <div class="d-flex"><p
+                                        class="fs-1 mb-0 fw-bold location-text-font-bold">{{ forecast_response['location']['name'] }}</p>
+                                </div>
+                                <div class="d-flex"><p
+                                        class="fs-6 mb-0 text-muted fw-regular">{{ forecast_response['forecast']['forecastday'][0]['date'] | do_date }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-end"><p
+                                        class="highlight mb-0 fw-bold location-text-font-bold">{{ forecast_response['current']['temp_c'] }}°C</p>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <img class="me-2" src="{{ forecast_response['current']['condition']['icon'] }}"
+                                         height="38"
+                                         alt="">
+                                    <p class="fs-4 mb-0 location-text-font-regular text-muted">{{ forecast_response['current']['condition']['text'] }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card p-3 border-0 bg-light rounded-3">
+                                    <div class="d-flex">
+                                        <div class="wind-speed w-33 text-center"><i
+                                                class="fa-solid fa-wind text-muted fa-lg"></i>
+                                            <p class="mb-0 fs-3 fw-bold">{{ forecast_response['current']['wind_kph'] }}
+                                                KpH</p>
+                                            <p class="mb-0 text-muted fs-6">Wind</p>
+                                        </div>
+                                        <div class="wind-angle w-33 text-center"><i
+                                                class="fa-solid fa-droplet blue fa-lg"></i>
+                                            <p
+                                                    class="fs-3 mb-0 fw-bold">{{ forecast_response['current']['humidity'] }}%</p>
+                                            <p class="mb-0 text-muted fs-6">Humidity</p>
+                                        </div>
+                                        <div class="wind-direction w-33 text-center"><i
+                                                class="fa-solid fa-umbrella violet fa-lg"></i>
+                                            <p
+                                                    class="fs-3 mb-0 fw-bold">{{ forecast_response['current']['wind_dir'] }}</p>
+                                            <p class="mb-0 text-muted fs-6">Rain</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% for day in forecast_response['forecast']['forecastday'] %}
+                                    <div class="card mt-3">
+                                        <div class="card-body p-3 d-flex">
+                                            <div class="w-10 my-auto"><img
+                                                    src="{{ day['day']['condition']['icon'] }}" height="38" alt="">
+                                            </div>
+                                            <div class="w-40 my-auto"><span
+                                                    class="fs-5 fw-semibold">{{ day['date'] | do_date }}</span>
+                                                <p class="mb-0 fs-7 text-muted">{{ day['day']['condition']['text'] }}</p>
+                                            </div>
+                                            <div class="w-25 my-auto text-center">
+                                                <span class="fs-5  me-5"><i
+                                                        class="fa-solid fa-temperature-low cool me-2 fa-lg"></i>{{ day['day']['mintemp_c'] }}°C</span>
+                                            </div>
+                                            <div class="w-25 my-auto text-center">
+                                                <span class="fs-5"><i
+                                                        class="fa-solid fa-temperature-high warm me-2 fa-lg"></i>{{ day['day']['maxtemp_c'] }}°C</span>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            // Connect to the Socket.IO server.
+            // The connection URL has the following format, relative to the current page:
+            //     http[s]://<domain>:<port>[/<namespace>]
+            var socket = io();
+
+            // Event handler for new connections.
+            // The callback function is invoked when a connection with the
+            // server is established.
+            socket.on('connect', function () {
+                socket.emit('my_event', {data: '0'});
+            });
+
+            // Event handler for server sent data.
+            // The callback function is invoked whenever the server emits data
+            // to the client. The data is then displayed in the "Received"
+            // section of the page.
+            socket.on('my_response', function (msg, cb) {
+                $('#log').text(msg.data + " %");
+                $('#log_inactivity').text(msg.data_inactivity + " %");
+                if (cb)
+                    cb();
+            });
+
+            // Test response received from server is handled here
+            socket.on('test_response', function (msg) {
+                $('#log').append($('<p/>').text(msg.data).html());
+            })
+
+            // Broadcast response from server is handled here
+            socket.on('broadcast_response', function (msg) {
+                $('#log').append($('<p/>').text(msg.data).html());
+            })
+        });
+    </script>
 {% endblock content %}
