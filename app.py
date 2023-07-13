@@ -32,7 +32,7 @@ forecast_url = "https://weatherapi-com.p.rapidapi.com/forecast.json"
 forecast_querystring = {"q": str(round(latitude, 2)) + "," + str(round(longitude, 2)), "days": "7"}
 
 forecast_headers = {
-    "X-RapidAPI-Key": "b1ac5af9e5msh0edd1bb0dbb99d9p17a553jsnd1c74668e43c",
+    "X-RapidAPI-Key": "your-api-key",
     "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"
 }
 
